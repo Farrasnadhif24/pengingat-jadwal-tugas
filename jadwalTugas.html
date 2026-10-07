@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Tugas</title>
+    <link rel="stylesheet" href="jadwalTugas.css">
+</head>
+<body>
+
+<div class="main-container">
+    
+    <div class="left-section">
+        <h1>Jadwal Tugas</h1>
+    
+    <!-- Elemen Baru: Indikator Loading Spinner -->
+    <div id="loadingSpinner" class="spinner-container" style="display: none;">
+        <div class="spinner"></div>
+        <p>Menyelaraskan tugas dari LMS PPNS...</p>
+    </div>
+
+    <ul id="taskList" class="task-list"></ul>
+</div>    
+   
+    <div class="right-section">
+        <div class="card">
+            <div class="form-group">
+                <label for="taskName">Mata Kuliah</label>
+                <input type="text" id="taskName" placeholder="nama mata kuliah">
+            </div>
+            <div class="form-group">
+                <label for="taskDeadline">Deadline</label>
+                <input type="datetime-local" id="taskDeadline">
+            </div>
+            
+            <div class="form-group">
+                <label for="reminderOffset">Ingatkan Saya</label>
+                <select id="reminderOffset" class="styled-select">
+                    <option value="0">Tepat Waktu (0 Menit)</option>
+                    <option value="30">30 Menit Sebelum</option>
+                    <option value="60">1 Jam Sebelum</option>
+                    <option value="1440">1 Hari Sebelum</option>
+                </select>
+            </div>
+            <button onclick="addTask()">Tambah Tugas</button>
+
+             <button onclick="syncCampusTask()" style="background-color: #10b981; margin-top: 15px;">🔄 Tarik Tugas Kampus</button>
+        </div>
+    </div>
+</div>
+
+<script src="jadwalTugas.js"></script>
+</body>
+</html>
